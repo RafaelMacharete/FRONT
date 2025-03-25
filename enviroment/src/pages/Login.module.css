@@ -1,0 +1,43 @@
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--white);
+}
+
+.title{
+    font-size: 1.5rem;
+    color: var(--reishin);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: var(--french-gray);
+}
+
+.field{
+    width: 450px;
+    border: none;
+    font-size: 0.76em;
+}
+
+.button{
+    border: none;
+    width: 450px;
+    font-size: 0.76em;
+}
+
+.terms_conditions{
+    display: flex;
+    width: 450px;
+}
+.terms{
+    font-size: 0.50em;
+    font-weight: lighter;
+}

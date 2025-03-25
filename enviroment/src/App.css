@@ -1,5 +1,52 @@
+:root{
+    /* palette 1 */
+    --coral: #DD7373;
+    --azul-terracota: #3B3561;
+    --mostarda: #EAD94C;
+    --cinza: #D1D1D1;
+    --ciano-verde-agua: #51A3A3;
+    /* palette 2 */
+    --violet-english: #4A4063;
+    --thistle: #BFACC8;
+    --french-gray: #C8C6D7;
+    --eminence: #783F8E;
+    --indigo: #4F1271;
+    /* palette 3 */
+    --onyx: #474448;
+    --raishin: #2D232E;
+    --bone: #E0DDCF;
+    --wenge: #534B52;
+    --isabelline: #F1F0EA;
+    /* palette 4 */
+    --night: #171614;
+    --bistre: #3A2618;
+    --garnet: #754043;
+    --beaver: #9A8873;
+    --black-olive: #37423D;
+    /* palette 5 */
+    --jet-a: #323031;
+    --jet-b: #3D3B3C;
+    --gray: #7F7979;
+    --silver: #C1BDB3;
+    --davy: #5F5B6B; 
+    /* palette 6 */
+    --brown-night: #12130F;
+    --viridian: #5B9279;
+    --celadon: #8FCB9B;
+    --platinum: #EAE6E5;
+    --cinereous: #8F8073;
+    /* palette 7 */
+    --rose-quartz: #BCABAE;
+    --night: #0F0F0F;
+    --jet: #2D2E2E;
+    --dim-gray: #716969;
+    --white: #FBFBFB;
+}
+
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: "Atkinson Hyperlegible Mono", sans-serif;
+    font-size: 1.1em;
 }

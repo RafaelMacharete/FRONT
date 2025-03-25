@@ -1,7 +1,10 @@
 .container{
-    background-color: crimson;
+    background-color: var(--jet-a);
     display: flex;
     align-items: center;
     justify-content: center;
-    
+}
+
+.title{
+    color: var(--white);
 }
