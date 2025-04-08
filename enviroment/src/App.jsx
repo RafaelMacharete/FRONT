@@ -6,9 +6,9 @@ import { EnviromentRegister } from "./pages/forms/EnviromentRegister";
 export function App(){
   return (
     <div>
-      {/* <TeacherLogin /> */}
+      <TeacherLogin />
       {/* <SubjectRegister /> */}
-      <EnviromentRegister />
+      {/* <EnviromentRegister /> */}
     </div>
   )
 }
