@@ -1,10 +1,14 @@
 import { Initial } from "./pages/Initial";
-import { TeacherLogin } from "./pages/TeacherLogin";
+import { SubjectRegister } from "./pages/forms/SubjectRegister";
+import { TeacherLogin } from "./pages/forms/TeacherLogin";
+import { EnviromentRegister } from "./pages/forms/EnviromentRegister";
 
 export function App(){
   return (
     <div>
-      <TeacherLogin />
+      {/* <TeacherLogin /> */}
+      {/* <SubjectRegister /> */}
+      <EnviromentRegister />
     </div>
   )
 }

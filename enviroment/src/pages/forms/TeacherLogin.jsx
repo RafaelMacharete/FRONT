@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 const loginSchema = z.object({
-    ni: z.string().length(7, { message: 'Insert a valid ni' }),
+    ni: z.string().length(7, { message: 'Insert a valid ni (length:7)' }),
     name: z.string().min(3, { message: 'Insert a valid name' }),
     email: z.string().email({ message: 'Insert a valid email' }),
     cellphone: z.string().min(10, { message: 'Insert a valid cellphone' }),
@@ -18,7 +18,7 @@ export function TeacherLogin() {
     })
 
     function userAutenticate(data) {
-        console.log(data )
+        console.log(data)
     }
 
     return (
@@ -48,10 +48,9 @@ export function TeacherLogin() {
                 />
                 {errors.email && (<p>{errors.email.message}</p>)}
                 <input
-                    {...register('cellphone')}
                     placeholder='Cell phone'
                     className={styles.field}
-                />
+                    />
                 {errors.cellphone && (<p>{errors.cellphone.message}</p>)}
                 <input
                     {...register('birthDate')}
