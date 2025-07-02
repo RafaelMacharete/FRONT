@@ -1,3 +1,4 @@
+/*
 type Book1 = {
     id: number;
     name: string;
@@ -74,12 +75,20 @@ const deepWork: Book2 = {
     printTitle(message) {
         return `${this.title} ${message}`
     },
-    // first option
-    printSomething: function (someValue) {
-        return someValue
-    }
-    // second option
-    // third option
+
+    // **** first option ****
+    // printSomething: function (someValue) {
+    //     return someValue
+    // },
+
+    // **** second option ****
+    // printSomething: (someValue) => someValue,
+
+
+    // **** third option ****
+    printSomething(someValue){
+        return someValue;
+    },
 }
 
 // deepWork.isbn = 'aa';
@@ -90,3 +99,30 @@ const deepWork: Book2 = {
 
 
 console.log(deepWork.printSomething(34));
+
+*/
+
+interface Computer {
+    readonly id: number,
+    brand: string,
+    ram: number,
+    storage?: number
+
+    upgradeRam(increase: number): number  
+}
+
+const computer1: Computer = {
+    id: 1,
+    brand: 'Purple Fire',
+    ram: 16,
+
+    // Method
+    upgradeRam(amount){
+        this.ram += amount;
+        return this.ram;
+    }
+}
+
+computer1.storage = 256;
+
+console.log(computer1);
