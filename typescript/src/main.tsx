@@ -5,7 +5,9 @@ import App from './App.tsx'
 // import './tutorial.ts'
 // import './exercises/exercise_01_array_names.ts'
 // import './exercises/exercise_02_employee.ts'
-import './exercises/exercise_03_interface.ts'
+// import './exercises/exercise_03_interface.ts'
+// import './concepts/interface.ts'
+import './exercises/challenge_interface.ts'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />

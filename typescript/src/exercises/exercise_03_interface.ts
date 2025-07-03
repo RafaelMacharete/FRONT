@@ -124,5 +124,6 @@ const computer1: Computer = {
 }
 
 computer1.storage = 256;
+computer1.upgradeRam(8);
 
 console.log(computer1);
