@@ -1,0 +1,2 @@
+Symbols are their own type in JS, we can use them as keys for objects
+and they are not treated the same way as strings
