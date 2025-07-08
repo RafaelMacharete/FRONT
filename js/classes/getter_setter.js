@@ -13,9 +13,21 @@ class Foo {
     set age(age) {
         this._age = age;
     }
+
+    thisIsAFunction(){}
+    
 }
 
-let foo = new Foo('Rafael Macharete')
+class Bar extends Foo{
+    constructor (name, yearsOfExperience){
+        super(name);
+
+        // Custom behavior
+        this.yearsOfExperience = yearsOfExperience;
+    }
+}
+
+let foo = new Foo('Rafael')
 foo.age = 17;
 
 console.log(foo.age);
@@ -23,3 +35,6 @@ console.log(foo.age);
 console.log(foo.age);
 console.log(foo.age);
 console.log(foo.numOfRequestsForAge);
+
+let bar = new Bar('Macharete', 1);
+bar._age
