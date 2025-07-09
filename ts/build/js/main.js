@@ -57,7 +57,33 @@ logMsg(addAll(2, 3, 2));
 logMsg(addAll(2, 3));
 logMsg(sumAll(2, 3));
 // Rest parameters
-const total = (...nums) => {
+const total = (a, ...nums) => {
     return nums.reduce((prev, curr) => prev + curr);
 };
-logMsg(total(1, 2, 3, 4));
+console.log('Log');
+logMsg(total(1, 2));
+const createError = (errMsg) => {
+    throw new Error(errMsg);
+};
+const infinite = () => {
+    let i = 1;
+    while (true) {
+        i++;
+        if (i > 100)
+            break;
+    }
+    ;
+};
+// Custom type guard
+const isNumber = (value) => {
+    return typeof value === 'number'
+        ? true : false;
+};
+// Use of the never type
+const numberOrString = (value) => {
+    if (typeof value === 'string')
+        return 'string';
+    if (typeof value === 'number')
+        return 'number';
+    return createError('This should never happen!');
+};
