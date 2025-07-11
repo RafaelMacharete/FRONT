@@ -36,7 +36,7 @@ var __esDecorate = (this && this.__esDecorate) || function (ctor, descriptorIn, 
 function log(target, propertyKey, descriptor) {
     const originalMethod = descriptor.value;
     descriptor.value = function (...args) {
-        console.log(`Calling ${propertyKey} with arguments: ${args}`);
+        console.log(`Calling ${String(propertyKey)} with arguments: ${args}`);
         return originalMethod.apply(this, args);
     };
     return descriptor;
