@@ -20,3 +20,24 @@
         <button (click)="toggleDiv2Color()">Toggle BG Color</button>
     </div>
 </div>
+
+<p>First name: {{ firstName }}</p>
+<p>First name upperCase: {{ firstName | uppercase}}</p>
+<p>Title case: {{ courseName | titlecase}}</p>
+<br><br><br>
+<p>rollNoList:  {{rollNoList}}</p>
+<br>
+{{rollNoList | slice:0:3}}
+<hr>
+<p>Object</p>
+<p>student: {{studentObj}}</p>
+<br>
+{{studentObj | json}}
+<br><br>
+<p>Date</p>
+<p>{{currentDate}}</p>
+<p>{{currentDate | date}}</p>
+<p>{{currentDate | date:'dd-MMM-yyyy'}}</p>
+<p>{{currentDate | date:'dd-MM-yyyy'}}</p>
+<p>{{currentDate | date:'dd-MMMM-yyyy'}}</p>
+<p>{{currentDate | date:'dd-MM-yy'}}</p>
