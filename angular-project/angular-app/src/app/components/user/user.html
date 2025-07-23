@@ -1,2 +1,45 @@
-<p>user works!</p>
-<h1>User page</h1>
+<table>
+  <thead>
+    <tr>
+      <th>userId</th>
+      <th>emailId</th>
+      <th>password</th>
+      <th>fullName</th>
+      <th>mobileNo</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of userList; track $index) {
+    <tr>
+      <td>{{item.userId}}</td>
+      <td>{{item.emailId}}</td>
+      <td>{{item.password}}</td>
+      <td>{{item.fullName}}</td>
+      <td>{{item.mobileNo}}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+
+<div class="form-grid">
+  <div>
+    <label>Email</label>
+    <input type="email" [(ngModel)]="userObj.emailId">
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" [(ngModel)]="userObj.password">
+  </div>
+  <div>
+    <label>Full Name</label>
+    <input type="text" [(ngModel)]="userObj.fullName">
+  </div>
+  <div>
+    <label>Mobile No</label>
+    <input type="text" [(ngModel)]="userObj.mobileNo">
+  </div>
+</div>
+
+<div class="button-group">
+  <button (click)="onSaveUser()">Save</button>
+</div>

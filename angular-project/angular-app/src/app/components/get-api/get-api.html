@@ -1,1 +1,20 @@
-<p>get-api works!</p>
+<table style="width: 100%;">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Website</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (user of userList; track $index) {
+            <tr>
+                <td>{{ user.name}}</td>
+                <td>{{ user.website}}</td>
+                <td>{{ user.username}}</td>
+                <td>{{ user.email}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
