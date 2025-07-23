@@ -1,1 +1,6 @@
 standalone component by default on angular 17
+pipe
+async pipe
+signal
+ngmodel
+observable

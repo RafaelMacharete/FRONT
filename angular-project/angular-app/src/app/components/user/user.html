@@ -6,6 +6,7 @@
       <th>password</th>
       <th>fullName</th>
       <th>mobileNo</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,10 @@
       <td>{{item.password}}</td>
       <td>{{item.fullName}}</td>
       <td>{{item.mobileNo}}</td>
+      <td>
+        <button (click)="onEdit(item)">Edit</button>
+        <button>Delete</button>
+      </td>
     </tr>
     }
   </tbody>
@@ -41,5 +46,10 @@
 </div>
 
 <div class="button-group">
-  <button (click)="onSaveUser()">Save</button>
+  <button (click)="onReset()">Reset</button>
+  @if (userObj.userId === 0 ) {
+    <button (click)="onSaveUser()">Save</button>
+  }@else {
+    <button (click)="onUpdateUser()">Update</button>
+  }
 </div>
