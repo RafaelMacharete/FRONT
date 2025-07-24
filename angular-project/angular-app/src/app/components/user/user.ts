@@ -44,14 +44,31 @@ export class User implements OnInit {
   onUpdateUser() {
     this.userObj.createdData = new Date();
     this.http.put('https://api.freeprojectapi.com/api/GoalTracker/updateUser?id=' + this.userObj.userId, this.userObj).subscribe({
-      next:(value) => {
+      next: () => {
         console.log('User updated successfully');
         this.getUsers();
       },
-      error:(err) => {
+      error: (err) => {
         alert(err.error)
       },
     })
+  }
+
+  onDeleteUser(id: number) {
+    const toDelete = confirm('Are you sure want to delete?')
+    if (toDelete) {
+      this.http.delete('https://api.freeprojectapi.com/api/GoalTracker/deleteUserById?id=' + id).subscribe({
+        next: () => {
+          alert('User deleted sucessfully');
+          this.getUsers();
+        },
+        error(err) {
+          alert(err);
+          console.log(err);
+          
+        },
+      })
+    }
   }
 
   onSaveUser() {

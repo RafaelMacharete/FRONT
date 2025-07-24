@@ -19,7 +19,7 @@
       <td>{{item.mobileNo}}</td>
       <td>
         <button (click)="onEdit(item)">Edit</button>
-        <button>Delete</button>
+        <button (click)="onDeleteUser(item.userId)">Delete</button>
       </td>
     </tr>
     }
