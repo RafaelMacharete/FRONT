@@ -13,7 +13,7 @@ export class ReactiveUser implements OnInit{
   userList: any[] = [];
   http = inject(HttpClient);
 
-  userForm: FormGroup = new FormGroup();
+  // userForm: FormGroup = new FormGroup();
   
   ngOnInit(): void {
     this.getUsers();
