@@ -2,4 +2,11 @@
     <p>bar works!</p>
     <p>Bar value: {{value()}} </p>
     <p>Bar required value: {{requiredValue()}} </p>
+    <p>{{ modelEntraceBar()}}</p>"
+    
+    <div>
+        <button (click)="updateCount(-1)">-</button>
+        <span>{{ count() }}</span>
+        <button (click)="updateCount(1)">+</button>
+    </div>
 </div>

@@ -1,2 +1,8 @@
 <p>foo works!</p>
-<app-bar [value]="50" [requiredValue]="'Yo, I am a required value!'"></app-bar>
+<app-bar 
+    [value]="50" 
+    [requiredValue]="'Yo, I am a required value!'"
+    [(modelEntraceBar)]="volume"
+    [count]="initialCount"
+    [aliasValue]="2"
+></app-bar>

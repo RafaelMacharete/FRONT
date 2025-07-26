@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Bar } from "../bar/bar";
 
 @Component({
@@ -8,5 +8,6 @@ import { Bar } from "../bar/bar";
   styleUrl: './foo.css'
 })
 export class Foo {
-
+  volume = signal(56)
+  initialCount = 44;
 }
