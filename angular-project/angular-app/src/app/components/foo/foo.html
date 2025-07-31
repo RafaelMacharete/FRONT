@@ -5,4 +5,11 @@
     [(modelEntraceBar)]="volume"
     [count]="initialCount"
     [aliasValue]="2"
-></app-bar>
+    [inputDecorator]="'asd'"
+    (barClosed)="saveFooState()"
+    (clicked)="doesSomething()"
+    (outputFunction)="performSomething($event)"
+    
+>I am a value to be queried</app-bar>
+
+
