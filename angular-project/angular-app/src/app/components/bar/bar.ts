@@ -15,7 +15,7 @@ export class Bar {
 
   modelEntraceBar = model(0);
 
-  awesomeName: string = '';
+  awesomeName: string = 'Mar';
 
   increment(){
     this.modelEntraceBar.update(oldValue => oldValue + 10);

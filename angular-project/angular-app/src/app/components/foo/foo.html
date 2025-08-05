@@ -11,5 +11,17 @@
     (outputFunction)="performSomething($event)"
     
 >I am a value to be queried</app-bar>
+<app-bar 
+    [value]="50" 
+    [requiredValue]="'Yo, I am a required value!'"
+    [(modelEntraceBar)]="volume"
+    [count]="initialCount"
+    [aliasValue]="2"
+    [inputDecorator]="'asd'"
+    (barClosed)="saveFooState()"
+    (clicked)="doesSomething()"
+    (outputFunction)="performSomething($event)"
+    
+>I am a value to be queried</app-bar>
 
 

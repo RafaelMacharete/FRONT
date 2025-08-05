@@ -1,4 +1,4 @@
-import { Component, computed, signal, viewChild } from '@angular/core';
+import { AfterContentInit, Component, computed, signal, viewChild, viewChildren } from '@angular/core';
 import { Bar } from "../bar/bar";
 
 @Component({
@@ -7,12 +7,13 @@ import { Bar } from "../bar/bar";
   templateUrl: './foo.html',
   styleUrl: './foo.css'
 })
-export class Foo {
+export class Foo implements AfterContentInit{
   volume = signal(56)
   initialCount = 44;
   
   // View queries
   bar = viewChild(Bar);
+  bars = viewChildren(Bar);
   barText = computed(() => this.bar()?.awesomeName)
 
   saveFooState(){
@@ -31,7 +32,11 @@ export class Foo {
     console.log("View queries");
     console.log(this.bar());
     console.log(this.barText());
+  }
 
+  ngAfterContentInit(): void {
+    console.log(this.bar()?.awesomeName);
+    console.log(this.bars().map((bar) => 1 + bar.awesomeName));
   }
 
   
