@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfólio de JavaScript</title>
+</head>
+
+<body>
+
+    <aside>
+        <h2>Aulas</h2>
+        <ul>
+            <li onclick="executeSourceCode('first_exercise.js')">Aula 1 - Variáveis</li>
+            <li onclick="executeSourceCode('second_exercise.js')">Aula 2 - Funções</li>
+            <li onclick="executeSourceCode('third_exercise.js')">Aula 3 - DOM</li>
+        </ul>
+    </aside>
+
+    <main id="conteudo">
+        <header>
+            <img src="me.jpg" alt="My image">
+            <h1>Rafael da Silva Macharete</h1>
+            <p>Fullstack Developer | Good learner</p>
+        </header>
+
+        <section>
+            <h2>Stacks & Knowledges</h2>
+            <ul>
+                <li>HTML5, CSS3, JavaScript;</li>
+                <li>Python, Java, C, C#;</li>
+                <li>React, Angular;</li>
+                <li>Fastapi, Django.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Source code</h2>
+            <p>Click over an class to execute the source code.</p>
+            <div id="resultado"></div>
+        </section>
+    </main>
+
+    <script>
+        function executeSourceCode(arquivo) {
+            // Remove pasts scripts to prevent re-execution
+            document.querySelectorAll('script[data-class]').forEach(s => s.remove());
+
+            // Create a new script element
+            let script = document.createElement('script');
+            script.src = 'classes/' + arquivo;
+            script.dataset.class = arquivo; // Mark as class to remove after
+
+            // Add to body
+            document.body.appendChild(script);
+        }
+    </script>
+
+</body>
+
+</html>
