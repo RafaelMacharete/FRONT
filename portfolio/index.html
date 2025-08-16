@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Portfólio de JavaScript</title>
+    <title>JavaScript Portfolio</title>
 </head>
 
 <body>
 
     <aside>
-        <h2>Aulas</h2>
+        <h2>Classes</h2>
         <ul>
-            <li onclick="executeSourceCode('first_exercise.js')">Aula 1 - Variáveis</li>
-            <li onclick="executeSourceCode('second_exercise.js')">Aula 2 - Funções</li>
-            <li onclick="executeSourceCode('third_exercise.js')">Aula 3 - DOM</li>
+            <li onclick="executeSourceCode('ex1.js')">Exercise 1 - Basic arithmetic operations</li>
+            <li onclick="executeSourceCode('ex2.js')">Exercise 2 - Average grade</li>
+            <li onclick="executeSourceCode('ex3.js')">Exercise 3 - Paint calculator</li>
+            <li onclick="executeSourceCode('ex4.js')">Exercise 4 - Diff between 2 numbers</li>
+            <li onclick="executeSourceCode('ex5.js')">Exercise 5 - Is a multiple of</li>
+            <li onclick="executeSourceCode('ex6.js')">Exercise 6 - Celsius to Fahrenheit</li>
+            <li onclick="executeSourceCode('ex7.js')">Exercise 7 - Area calculator</li>
+            <br><hr>
+            <li onclick="executeSourceCode('ex8.js')">Exercise 8 - Age verification</li>
+            <li onclick="executeSourceCode('ex9.js')">Exercise 9 - Even or odd</li>
+            <li onclick="executeSourceCode('ex10.js')">Exercise 10 - Greater or equal</li>
+            <li onclick="executeSourceCode('ex11.js')" style="color: cyan;">Exercise 11 - Verify password (Testa esse aqui)</li>
+            <!-- Eu sei que não é adequado usar estilização inline, mas é pra senhora ver, rsrs 😊 -->
+            <li onclick="executeSourceCode('ex12.js')">Exercise 12 - Check temperature</li>
+            <br><hr>
+            <li onclick="executeSourceCode('ex13.js')">Exercise 13 - Is above average</li>
+            <li onclick="executeSourceCode('ex14.js')">Exercise 14 - IMC Calculator</li>
+            <li onclick="executeSourceCode('ex15.js')">Exercise 15 - Leap Year</li>
+            <li onclick="executeSourceCode('ex16.js')">Exercise 16 - Money converter</li>
+            <br><hr>
+            <li onclick="executeSourceCode('ex17.js')">Exercise 17 - Guessing game</li>
+            <br><hr>
+            <li onclick="executeSourceCode('ex18.js')">Exercise 18 - Multiplication table</li>
+            <li onclick="executeSourceCode('ex19.js')">Exercise 19 - Rock, paper, scissor</li>
+            <li onclick="executeSourceCode('ex20.js')">Exercise 20 - Number factorial</li>
+            <br><hr>
+            <li onclick="executeSourceCode('function1.js')">Function exercise 1 - Sum 2 numbers</li>
+            <li onclick="executeSourceCode('function2.js')">Function exercise 2 - Is Even</li>
+            <li onclick="executeSourceCode('function3.js')">Function exercise 3 - Basic arithmetic operations</li>
+            <li onclick="executeSourceCode('function4.js')">Function exercise 4 - Double numbers in a collection</li>
+            <li onclick="executeSourceCode('function5.js')">Function exercise 5 - Filtr values greater than 10</li>
+            <li onclick="executeSourceCode('function6.js')">Function exercise 6 - All words to upperCase</li>
+            <br><hr>
+            <li onclick="executeSourceCode('function7.js')">Function exercise 7 - Square of a number</li>
+            <li onclick="executeSourceCode('function8.js')">Function exercise 8 - Celsius to Fahrenheit</li>
+            <li onclick="executeSourceCode('function9.js')">Function exercise 9 - Rectangle area</li>
+            <li onclick="executeSourceCode('function10.js')">Function exercise 10 - Multiply number by idx</li>
+            <li onclick="executeSourceCode('function11.js')">Function exercise 11 - How many odd numbers</li>
+
         </ul>
     </aside>
 
-    <main id="conteudo">
+    <main id="content">
         <header>
             <img src="me.jpg" alt="My image">
             <h1>Rafael da Silva Macharete</h1>
@@ -39,19 +75,19 @@
         <section>
             <h2>Source code</h2>
             <p>Click over an class to execute the source code.</p>
-            <div id="resultado"></div>
+            <div id="result"></div>
         </section>
     </main>
 
     <script>
-        function executeSourceCode(arquivo) {
+        function executeSourceCode(file) {
             // Remove pasts scripts to prevent re-execution
             document.querySelectorAll('script[data-class]').forEach(s => s.remove());
 
             // Create a new script element
             let script = document.createElement('script');
-            script.src = 'classes/' + arquivo;
-            script.dataset.class = arquivo; // Mark as class to remove after
+            script.src = 'classes/' + file;
+            script.dataset.class = file; // Mark as class to remove after
 
             // Add to body
             document.body.appendChild(script);

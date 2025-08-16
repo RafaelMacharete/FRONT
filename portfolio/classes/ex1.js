@@ -12,8 +12,8 @@ alert(`The results are:
     multiplication: ${multiplication}\n
     division: ${division}`);
 
-let resultado = document.getElementById("resultado");
-resultado.innerHTML = `
+let result1 = document.getElementById("result");
+result1.innerHTML = `
     <h3>Exercise 1 - Arithmetic operations</h3>
     <pre>   
         let firstNumber = parseFloat(prompt('Enter the 1st number: '));
