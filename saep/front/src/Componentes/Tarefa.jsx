@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export function Tarefa({ tarefa }) {
-    console.log(tarefa);
     
     const navigate = useNavigate();
     
@@ -28,7 +27,6 @@ export function Tarefa({ tarefa }) {
         const apiURL = `http://127.0.0.1:8000/tasks/${tarefa.id}`;
         axios.patch(apiURL, { status: newStatus })
             .then(response => {
-                console.log("Status da tarefa atualizado", response.data);
                 window.location.reload();
             })
             .catch(error => {

@@ -7,18 +7,18 @@ import z from "zod"
 
 const schemaCadTarefas = z.object({
     description: z.string()
-        .trim()
         .min(1, 'Preencha o campo título')
         .max(100, 'O campo permite até 100 caracteres')
-        .transform(str => str.trim()),
-
+        .refine((str) => str.trim().length > 0, {
+            message: "Preencha o campo título",
+        }),
 
     department: z.string()
-        .trim()
         .min(1, 'Preencha o campo departamento')
         .max(100, 'O campo permite até 100 caracteres')
-        .transform(str => str.trim()),
-
+        .refine((str) => str.trim().length > 0, {
+            message: "Preencha o campo departamento",
+        }),
 
     user: z.coerce.number().min(1, 'Selecione um usuário'),
 
@@ -26,6 +26,7 @@ const schemaCadTarefas = z.object({
         errorMap: () => ({ message: 'Selecione uma prioridade' })
     })
 });
+
 
 export function CadTarefas() {
     const { id } = useParams();
@@ -86,7 +87,7 @@ export function CadTarefas() {
             <form className="formulario" onSubmit={handleSubmit(salvarTarefa)}>
                 <div>
                     <label htmlFor="description">Descrição</label>
-                    <input id="description" {...register("description")} />
+                    <textarea id="description" {...register("description")} />
                     {errors.description && <p>{errors.description.message}</p>}
                 </div>
                 <div>
