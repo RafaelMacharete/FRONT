@@ -1,0 +1,9 @@
+@use './variaveis' as *;
+
+.colunas{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    min-height: 100vh;
+}

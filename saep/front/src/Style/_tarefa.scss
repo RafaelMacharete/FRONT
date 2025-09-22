@@ -1,0 +1,69 @@
+@use './variaveis' as *;
+
+.tarefa {
+    background-color: white;
+    padding: 10px;
+
+    h3 {
+        font-size: 18px;
+        color: $cor-destaque;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-size: 14px;
+        width: 50%;
+        overflow-wrap: break-word;
+    }
+
+    dl {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        margin-bottom: 10px;
+
+        dt {
+            font-weight: bold;
+            color: $cor-destaque;
+        }
+
+        dd {
+            margin: 0;
+            padding-left: 10px;
+        }
+    }
+
+    button {
+        background-color: $principal;
+        color: white;
+        padding: 5px 10px;
+        margin-right: 5px;
+        cursor: pointer;
+
+    }
+
+    .formStatus {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        label {
+            font-weight: bold;
+            color: $cor-destaque;
+        }
+
+        select {
+            padding: 5px;
+        }
+
+        button {
+            align-self: flex-start;
+            background-color: $principal;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+
+        }
+    }
+}
