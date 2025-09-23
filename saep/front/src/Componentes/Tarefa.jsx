@@ -45,7 +45,7 @@ export function Tarefa({ tarefa }) {
                 <dd>{tarefa.department}</dd>
 
                 <dt>Prioridade:</dt>
-                <dd>{tarefa.priority}</dd>
+                <dd>{tarefa.priority == 'low' ? 'Baixa' : tarefa.priority == 'medium' ? 'Média' : 'Alta'}</dd>
 
                 <dt>Vinculado a:</dt>
                 <dd>{tarefa.user_name}</dd>

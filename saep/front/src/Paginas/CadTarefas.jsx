@@ -10,12 +10,13 @@ const schemaCadTarefas = z.object({
         .min(1, 'Preencha o campo título')
         .max(100, 'O campo permite até 100 caracteres')
         .refine((str) => str.trim().length > 0, {
-            message: "Preencha o campo título",
+            message: "Preencha o campo descrição",
         }),
-
-    department: z.string()
+        
+        department: z.string()
         .min(1, 'Preencha o campo departamento')
         .max(100, 'O campo permite até 100 caracteres')
+        .regex(/^[A-Za-zÀ-ú ]+$/, 'O campo departamento só aceita letras e espaços')
         .refine((str) => str.trim().length > 0, {
             message: "Preencha o campo departamento",
         }),
@@ -36,6 +37,7 @@ export function CadTarefas() {
         register,
         handleSubmit,
         reset,
+        setValue,
         formState: { errors }
     } = useForm({ resolver: zodResolver(schemaCadTarefas) });
 
@@ -87,12 +89,21 @@ export function CadTarefas() {
             <form className="formulario" onSubmit={handleSubmit(salvarTarefa)}>
                 <div>
                     <label htmlFor="description">Descrição</label>
-                    <textarea id="description" {...register("description")} />
+                    <textarea
+                        id="description"
+                        {...register("description")}
+                        onBlur={(e) => setValue("description", e.target.value.trim())}
+                    />
                     {errors.description && <p>{errors.description.message}</p>}
+
                 </div>
                 <div>
                     <label htmlFor="department">Departamento</label>
-                    <input id="department" {...register("department")} />
+                    <input
+                        id="department"
+                        {...register("department")}
+                        onBlur={(e) => setValue("department", e.target.value.trim())}
+                    />
                     {errors.department && <p>{errors.department.message}</p>}
                 </div>
                 <div>
