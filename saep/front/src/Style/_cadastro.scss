@@ -1,39 +1,58 @@
 @use './variaveis' as *;
-.formulario{
-    max-width: 690px;
-    margin: 10px;
-    padding: 15px;
-    background-color: $background;
+
+.formulario {
+  max-width: 690px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: $background;
+  border-radius: $borda-arrendondada;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: $cor-destaque;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-weight: 600;
+    color: $cor-destaque;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 10px;
     border-radius: $borda-arrendondada;
-    box-shadow:  0 4px 8px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    border: 1px solid lighten($cor-destaque, 20%);
+    font-size: 14px;
+  }
 
-    h2{
-        font-size: 24px;
-        color:$cor-destaque;
-        text-align: center;
-    }
-    label{
-        font-weight: bold;
-        color:$cor-destaque;
-        
-    }
+  textarea {
+    width: 100%;
+    resize: vertical;
+  }
 
-    input, select, textarea{
-        padding: 5px;
-        border-radius: $borda-arrendondada;
-        border-color: $cor-destaque;
-        resize: vertical;
-        cursor: pointer;
-        font-size: 12px;
-    }
-    button{
-        background-color: $cor-destaque;
-        padding: 5px;
-        border-radius: $borda-arrendondada;
-        color: $background;
-    }
+  button {
+    background-color: $cor-destaque;
+    padding: 10px;
+    border-radius: $borda-arrendondada;
+    color: $background;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+  }
 
+  p {
+    color: #e63946;
+    font-size: 12px;
+    margin-top: 4px;
+  }
 }

@@ -31,7 +31,8 @@ export function CadUsuario() {
         register,//registra para mim 
         handleSubmit,// no momento em que eu submeter(clicar em cadastrar)
         formState: { errors }, //o que ta no formulario // se der ruim deixa na variavel errors
-        reset // PERGUNTAR AQUI <----------------------------------------------------------
+        reset, // PERGUNTAR AQUI <----------------------------------------------------------
+        setValue,
     } = useForm({ resolver: zodResolver(schemaCadUsuario) });//mamae junta os 3 e faz a validação
 
     async function obterDados(data) {
@@ -62,6 +63,7 @@ export function CadUsuario() {
                 type="text"
                 placeholder="Jose da Silva"
                 {...register('username')}
+                onBlur={(e) => setValue("username", e.target.value.trim())}
             />
             {/* Se der erro eu crio um novo paragrafo para exibir a mensagem */}
             {errors.username && <p>{errors.username.message}</p>}
@@ -71,6 +73,7 @@ export function CadUsuario() {
                 type='email'
                 placeholder="email@dominio.com.br"
                 {...register('email')}
+                onBlur={(e) => setValue("email", e.target.value.trim())}
             />
             {errors.email && <p>{errors.email.message}</p>}
 

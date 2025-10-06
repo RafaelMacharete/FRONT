@@ -7,7 +7,7 @@ import z from "zod"
 
 const schemaCadTarefas = z.object({
     description: z.string()
-        .min(1, 'Preencha o campo título')
+        .min(1, 'Preencha o campo descrição')
         .max(100, 'O campo permite até 100 caracteres')
         .refine((str) => str.trim().length > 0, {
             message: "Preencha o campo título",
@@ -36,6 +36,7 @@ export function CadTarefas() {
         register,
         handleSubmit,
         reset,
+        setValue,
         formState: { errors }
     } = useForm({ resolver: zodResolver(schemaCadTarefas) });
 
@@ -68,6 +69,8 @@ export function CadTarefas() {
     async function salvarTarefa(data) {
         try {
             if (id) {
+                console.log(data);
+                
                 await axios.put(`http://localhost:8000/tasks/${id}`, data);
                 alert("Tarefa atualizada com sucesso!");
             } else {
@@ -87,12 +90,22 @@ export function CadTarefas() {
             <form className="formulario" onSubmit={handleSubmit(salvarTarefa)}>
                 <div>
                     <label htmlFor="description">Descrição</label>
-                    <textarea id="description" {...register("description")} />
+                    <textarea
+                        id="description"
+                        {...register("description")}
+                        onBlur={(e) => setValue("description", e.target.value.trim())}
+                        placeholder="Insira a descrição aqui"
+                    />
                     {errors.description && <p>{errors.description.message}</p>}
                 </div>
                 <div>
                     <label htmlFor="department">Departamento</label>
-                    <input id="department" {...register("department")} />
+                    <input
+                        id="department"
+                        {...register("department")}
+                        onBlur={(e) => setValue("department", e.target.value.trim())}
+                        placeholder="Insira o departamento aqui"
+                    />
                     {errors.department && <p>{errors.department.message}</p>}
                 </div>
                 <div>
