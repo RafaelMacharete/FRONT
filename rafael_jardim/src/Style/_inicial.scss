@@ -1,0 +1,64 @@
+@use './variaveis' as *;
+
+.inicial {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 20px;
+
+  .background {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    opacity: 0.4;
+  }
+
+  .entrar {
+    position: absolute;
+    background: #000;
+    background: $penn-red;
+    height: 150px;
+    width: fit-content;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .boas-vindas {
+      color: white;
+    }
+
+    .entrar-button {
+      color: #fff;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        background: $botao-amarelo;
+        color: #04010f;
+      }
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem; // título menor em tablet
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+
+}
